@@ -1,0 +1,115 @@
+<html>
+    <head>
+        <title>RockMusic</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" type="text/css" href="http://localhost/pro/PlayMusic.css">
+    </head>
+
+    <body>
+        <header>
+            <a href="#" class="logo">RockMusic</a>
+            <nav class="menu">
+                <a href="http://localhost/pro/HomePage.html" class="active"> Back To Home Page</a>
+            </nav>
+        </header>
+
+        <section class="Home">
+            <!-- image -->
+            <div class="content_img">
+                <img src="images/s1.jpg">
+            </div>
+
+            <!--content-->
+            <div class="content_Music">
+                <h2 id="title">Song1</h2>
+                <h3 id="artist">Anuj</h3>
+            </div>
+
+                <!-- Audio -->
+            <div class="content_audio">
+                <audio src="songs/s1.mp3"></audio>
+                <!-- Controles -->
+                <div class="Music_controls">
+                    <i class="fas fa-backward" id="prev" title="prev"></i>
+                    <i class="fa-solid fa-play" id="play" title="play"></i>
+                    <i class="fas fa-forward" id="next" title="next"></i>	
+                </div>
+            </div>
+        </section>
+    </body>
+
+    <script>
+        const music=document.querySelector("audio");
+        const img=document.querySelector("img");
+        const play=document.getElementById("play");
+        const title=document.getElementById("title");
+        const artist=document.getElementById("artist");
+        const prev=document.getElementById("prev");
+        const next=document.getElementById("next");
+
+        const songs=[{
+            name:"s1",
+            title:"Song1",
+            artist:"Anuj",
+        },
+        {
+            name:"s2",
+            title:"Song2",
+            artist:"Astha",
+        },
+        {
+            name:"s3",
+            title:"Song3",
+            artist:"Nupur",
+        },]
+
+        let isplaying=false;
+
+        const playMusic=()=>{
+		isplaying=true;
+		music.play();
+        play.className = "fa-solid fa-pause";
+		img.classList.add("anime");
+	};
+	// for pause
+	const pauseMusic=()=>{
+		isplaying=false;
+		music.pause();
+        play.className = "fa-solid fa-play";
+		img.classList.remove("anime");
+	};
+
+    play.addEventListener('click',()=>{
+		if(isplaying){
+			pauseMusic();
+		}else{
+			playMusic();
+		}
+	});
+    const loadsong = (songs)=>{
+		title.textContent=songs.title;
+		artist.textContent=songs.artist;
+		music.src="songs/"+songs.name+".mp3";
+		img.src="images/"+songs.name+".jpg";
+        playMusic();
+	};
+
+	songIndex = 0;
+
+	//next playsong
+	const nextSong=()=>{
+		songIndex = (songIndex + 1) % songs.length;
+		loadsong(songs[songIndex]);
+	};
+
+	//prev playsong
+	const prevSong=()=>{
+		songIndex = (songIndex - 1 + songs.length) % songs.length;
+		loadsong(songs[songIndex]);
+	};
+
+  next.addEventListener('click',nextSong);
+  prev.addEventListener('click',prevSong);
+    
+    </script>
+</html>

@@ -1,0 +1,127 @@
+*{
+    font-family:cursive;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    text-decoration: none;
+    margin:0;
+    padding:0;
+}
+html{
+    font-size: 90%;
+    overflow:hidden;
+}
+header{
+    display:flex;
+    position: fixed;
+    padding:0.3rem;
+    top:0;
+    left:0;
+    justify-content: space-between;
+    background-color:black;
+    color:white;
+    width:100%;
+    align-items: center;
+    
+}
+header .menu{
+    margin-left: 1rem;
+}
+header .logo{
+    padding-left: 0.5rem;
+    color: red;
+    font-size:4rem;
+}
+header .menu a{
+    padding: 0.5rem 1rem;;
+    color:black;
+    background-color: white;
+    text-align: center;
+    border-radius: 5rem;
+    font-size:2rem;
+	margin-left: 1rem;
+}
+header .menu a:hover{
+	background-color: rgb(223, 183, 52);
+	color: red;
+}
+
+section{
+    min-height:100vh;
+    padding:rem 9%;
+    padding-top:1rem;
+}
+/*----------------------------Home section--------------------------*/
+.Home{
+    background:url(playback.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.Home .content h1{
+	font-size: 2.5rem;
+	color: lightblue;
+}
+.content_Music{
+	width: 25rem;
+	height: 2rem;
+	/*border-right-color: white;*/
+	border-radius: 2rem;
+	padding: 3rem;
+    padding-top:-10rem;
+}
+.content_Music #title{
+	text-transform: uppercase;
+	letter-spacing: .2rem;
+	color: lightblue;
+	margin-top: -3rem;
+	font-size: 2rem;
+	font-weight: 500;
+
+}
+.content_Music #artist{
+	text-transform: capitalize;
+	letter-spacing: .2rem;
+	color: lightblue;
+	margin-left:2rem;
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+.Home .content_img img{
+	width: 180;
+	height: 180;
+    text-align: center;
+    margin-left: 43%;
+    margin-right: auto;
+    border-radius:10rem;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15rem;
+    object-fit: cover;
+}
+
+.Music_controls{
+	color: lightblue;
+	font-size: 2rem;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;	
+	margin-top: 3rem;
+    width: 20rem;
+	display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-top: -3rem;
+    margin-bottom: rem;
+}
+
+.anime{
+	animation: rotateplayer 3s linear infinite;
+}
+@keyframes rotate {
+	from{transform: rotate(0deg);
+	}
+	to{
+		transform: rotate(360deg); 
+	}
+}
