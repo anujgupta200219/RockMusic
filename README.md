@@ -1,4 +1,5 @@
 # RockMusic-Website
 A music player site.
-If you want to do some project try to do yourself first if not getting then take the reference.
+Musiverse is a full-stack web platform that combines the power of artificial intelligence (AI) with a social networking element to enable music creators, producers, and enthusiasts to collaborate, discover, and experience music in entirely new ways.
+
 Link of the site:  https://anujmusic.000webhostapp.com/
